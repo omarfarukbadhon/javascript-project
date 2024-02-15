@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task One</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body>
+    <fieldset>
+        What is the price of Orange:
+        <input type="text" name="" id="orange"><br><br>
+        What is the price of Apple:
+        <input type="text" name="" id="apple"><br><br>
+        <input type="button" onclick="returnPrice()" value="Calculate">
+        <p>The shopkeeper return you $<span id="result"></span></p>
+    </fieldset>
+    <script>
+        function returnPrice() {
+            var orangePrice = document.getElementById('orange').value;
+            var applePrice = document.getElementById('apple').value;
+            var backValue = 1000 - (parseInt(orangePrice) + parseInt(applePrice));
+            document.getElementById('result').innerHTML = backValue;
+        }
+    </script>
+</body>
+
+</html>
