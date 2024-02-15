@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Two</title>
+</head>
+<body>
+    <fieldset style="width: 30%; margin: 40px auto;">
+        <legend>BMI Calculator</legend>
+        What is your weight(kg): 
+        <input type="text" name="weight" id="weight"><br><br>
+        What is your Height(m): 
+        <input type="text" name="height" id="height"><br><br>
+        <input type="button" value="Calculate" onclick="CalculateBMI()"><br>
+        <p>Your BMI Value is: <span id="valueOfBMI"></span></p><br>
+        <p id="comment"></p>
+    </fieldset>
+    <div style="width: 30%; margin: 20px auto;">
+        <img src="Images/underweight.jpg" alt="" style="margin: 40px 80px; display: none;" width="300px" id="underweight">
+        <img src="Images/perfect.jpg" alt="" style="margin: 40px 80px; display: none;" width="300px" id="perfect">
+        <img src="Images/overweight.jpg" alt="" style="margin: 40px 80px; display: none;" width="300px" id="overweight">
+        <img src="Images/mota.jpg" alt="" style="margin: 40px 80px; display: none;" width="300px" id="mota">
+    </div>
+    
+    <script>
+        function CalculateBMI(){
+            let humanWeight = document.getElementById('weight').value;
+            let humanHeight = document.getElementById('height').value;
+            let BMIValue = document.getElementById('valueOfBMI');
+            let comment = document.getElementById('comment');
+            let BMI = (humanWeight / humanHeight**2).toFixed(2);
+            if(BMI<18.5){
+                BMIValue.innerHTML = BMI;
+                comment.textContent = "you are underweight";
+                document.getElementById('underweight').style.display = 'block';
+            }else if(BMI >= 18.5 && BMI <= 24.9){
+                BMIValue.innerHTML = BMI;
+                comment.textContent = "you are normal";
+                document.getElementById('perfect').style.display = 'block';
+            }else if(BMI >= 25 && BMI <= 29.9){
+                BMIValue.innerHTML = BMI;
+                comment.textContent = "you are overweight"
+                document.getElementById('overweight').style.display = 'block';
+            }else{
+                BMIValue.innerHTML = BMI;
+                comment.textContent = "you are obese"
+                document.getElementById('mota').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

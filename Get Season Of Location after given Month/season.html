@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <fieldset id="container">
+        <legend>Season Finder</legend>
+        What is the month in your Location:
+        <input type="text" id="month">
+        <input type="button" value="Season" onclick="season()">
+        <p>Present Season in your Location is: <span id="Season"></span></p>
+        <div id="image">
+            <h1 id="middle"></h1>
+            <img src="Images/Autumn.jpg" alt="Autumn">
+        </div>
+    </fieldset>
+    <script>
+        function season() {
+            let month = document.getElementById('month').value;
+            switch (month) {
+                case "December":
+                case "January":
+                case "February":
+                    document.getElementById('Season').innerHTML = "Winter";
+                    document.getElementById('middle').innerHTML = "Winter";
+                    document.getElementById('image').style.display = 'block';
+                    document.getElementById('container').style.height = '90vh';
+                    break;
+                case "March":
+                case "April":
+                case "May":
+                    document.getElementById('Season').innerHTML = "Spring";
+                    document.getElementById('middle').innerHTML = "Spring";
+                    document.getElementById('image').style.display = 'block';
+                    document.getElementById('container').style.height = '90vh';
+                    break;
+                case "June":
+                case "July":
+                case "August":
+                    document.getElementById('Season').innerHTML = "Summer";
+                    document.getElementById('middle').innerHTML = "Summer";
+                    document.getElementById('image').style.display = 'block';
+                    document.getElementById('container').style.height = '90vh';
+                    break;
+                case "September":
+                case "October":
+                case "November":
+                    document.getElementById('Season').innerHTML = "Autumn";
+                    document.getElementById('middle').innerHTML = "Autumn";
+                    document.getElementById('image').style.display = 'block';
+                    document.getElementById('container').style.height = '90vh';
+                    break;
+                default:
+                    document.getElementById('Season').innerHTML = "Invalid Month! Please Check your Month";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
