@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <fieldset>
+        <legend>Converter</legend>
+        <div class="input">
+            <p>Input</p>
+            <input type="text" name="Input" id="input">
+            <select id="InputChoice">
+                <option value=""> -Select- </option>
+                <option value="m">m</option>
+                <option value="cm">cm</option>
+                <option value="Km">Km</option>
+            </select>
+            <p>To</p>
+            <select id="OutputChoice">
+                <option value=""> -Select- </option>
+                <option value="m">m</option>
+                <option value="cm">cm</option>
+                <option value="Km">Km</option>
+            </select>
+            <button id="convert" onclick="Convert()">Convert</button>
+        </div>
+        <p id="display">Result</p>
+        <p style="display: none;" id="result"><span id="inputValue"></span> <span id="inputSelect"></span> is equal to
+            <span id="outputValue"></span> <span id="outputSelect"></span></p>
+    </fieldset>
+    <script>
+        function Convert() {
+            let InputChoice = document.getElementById("InputChoice").value;
+            let OutputChoice = document.getElementById("OutputChoice").value;
+
+            let input = document.getElementById("input").value;
+            document.getElementById("display").style.display = "none";
+            function meterToCent(number, given, conversion){
+                if(given === "m" && conversion === "cm"){
+                    number = number * 100;
+                }
+                return number;
+            }
+            const meter = meterToCent(input, InputChoice, OutputChoice);
+            function centToMeter(number, given, conversion){
+                if(given === "cm" && conversion === "m"){
+                    number = number / 100;
+                }
+                return number;
+            }
+            const Cent = centToMeter(input, InputChoice, OutputChoice);
+            function meterToKm(number, given, conversion){
+                if(given === "m" && conversion === "Km"){
+                    number = number * 1000;
+                }
+                return number;
+            }
+            const Km = meterToKm(input, InputChoice, OutputChoice);
+            function KmToMeter(number, given, conversion){
+                if(given === "Km" && conversion === "m"){
+                    number = number / 1000;
+                }
+                return number;
+            }
+            const meterKm = KmToMeter(input, InputChoice, OutputChoice);
+            document.getElementById("inputValue").innerHTML = input;
+            document.getElementById("inputSelect").innerHTML = InputChoice;
+            document.getElementById("outputSelect").innerHTML = OutputChoice;
+            document.getElementById("outputValue").innerHTML = meterKm;
+            document.getElementById("result").style.display = "block"
+        }
+    </script>
+</body>
+
+</html>

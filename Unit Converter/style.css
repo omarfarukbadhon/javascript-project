@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset{
+    width: 40%;
+    margin: 50px auto;
+    padding: 2rem;
+}
+
+legend{
+    text-align: center;
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.input{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+input{
+    height: 2.5rem;
+    border-radius: 1rem;
+    border: 1px solid greenyellow;
+    outline: none;
+    font-size: 1.5rem;
+    padding: 1.5rem 1.2rem;
+}
+
+select{
+    height: 2.5rem;
+    border-radius: 1rem;
+    border: 1px solid greenyellow;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+option{
+    color: black;
+}
+
+#convert{
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.convert{
+    width: 18%;
+}
+
+
+#display, #result{
+    text-align: center;
+}
+
+
+
+
+
+
