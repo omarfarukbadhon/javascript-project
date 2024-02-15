@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-[30%] mx-auto my-8">
+        Which multiplication table you want:
+        <input type="text" placeholder="Number" class="input input-bordered " id="number"/><br><br>
+        <button class="btn" id="button" onclick="generateTable()">Generate Multiplication Table</button>
+    </div>
+    <div class="overflow-x-auto hidden mx-auto w-[20%]" id="table">
+        <table class="table">
+            <caption class="text-2xl font-bold italic mb-5">Multiplication Table of <span id="numberOfMultiplication"></span></caption>
+            <!-- head -->
+            <thead>
+                <tr class="text-xl text-black text-center">
+                    <th>Multiplication</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody class="text-base font-medium text-center">
+                <!-- row 1 -->
+                <tr>
+                    <td>1 * <span id="MultiplicationNumber1"></span></td>
+                    <td id="multiplication1"></td>
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                    <td>2 * <span id="MultiplicationNumber2"></span></td>
+                    <td id="multiplication2"></td>
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                    <td>3 * <span id="MultiplicationNumber3"></span></td>
+                    <td id="multiplication3"></td>
+                </tr>
+                <!-- row 4 -->
+                <tr>
+                    <td>4 * <span id="MultiplicationNumber4"></span></td>
+                    <td id="multiplication4"></td>
+                </tr>
+                <!-- row 5 -->
+                <tr>
+                    <td>5 * <span id="MultiplicationNumber5"></span></td>
+                    <td id="multiplication5"></td>
+                </tr>
+                <!-- row 6 -->
+                <tr>
+                    <td>6 * <span id="MultiplicationNumber6"></span></td>
+                    <td id="multiplication6"></td>
+                </tr>
+                <!-- row 7 -->
+                <tr>
+                    <td>7 * <span id="MultiplicationNumber7"></span></td>
+                    <td id="multiplication7"></td>
+                </tr>
+                <!-- row 8 -->
+                <tr>
+                    <td>8 * <span id="MultiplicationNumber8"></span></td>
+                    <td id="multiplication8"></td>
+                </tr>
+                <!-- row 9 -->
+                <tr>
+                    <td>9 * <span id="MultiplicationNumber9"></span></td>
+                    <td id="multiplication9"></td>
+                </tr>
+                <!-- row 10 -->
+                <tr>
+                    <td>10 * <span id="MultiplicationNumber10"></span></td>
+                    <td id="multiplication10"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function generateTable(){
+            let numberOfMultiplication = parseInt(document.getElementById('number').value);
+            document.getElementById('numberOfMultiplication').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber1').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber2').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber3').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber4').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber5').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber6').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber7').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber8').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber9').innerHTML = numberOfMultiplication;
+            document.getElementById('MultiplicationNumber10').innerHTML = numberOfMultiplication;
+            for(let i=1; i<=10; i++){
+                document.getElementById('multiplication'+[i]).innerHTML = i*numberOfMultiplication;
+            }
+            document.getElementById('table').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even Number</title>
+    <style>
+        fieldset{
+            width: 50%;
+            margin: 10rem auto;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+
+        legend{
+            text-align: center;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        input[type="text"], input[type="number"]{
+            height: 2rem;
+            font-size: 1.5rem;
+            padding: 1rem 1.5rem;
+            border-radius: 1.5rem;
+        }
+
+        input[type="button"]{
+            font-size: 1.8rem;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-radius: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Odd or Even Number Generate</legend>
+        Which number u try to find:
+        <input type="text" id="odd-even" placeholder="Odd or Even"><br><br>
+        Range of your starting number:
+        <input type="number" name="number" id="first-range"><br><br>
+        Range of your End number:
+        <input type="number" name="number" id="end-range"><br><br>
+        <input type="button" value="Generate" onclick="Generate()">
+        <p>Your <span id="choice"></span> Number is: <span id="oddEven"></span></p>
+    </fieldset>
+
+    <script>
+        function Generate() {
+            let choice = document.getElementById('odd-even').value;
+            document.getElementById('choice').innerHTML = choice;
+            let firstRange = parseInt(document.getElementById('first-range').value);
+            let endRange = parseInt(document.getElementById('end-range').value);
+            let oddEven = [];
+            if(choice == 'even'){
+                for(firstRange; firstRange<=endRange; firstRange++){
+                    if(firstRange % 2 === 0){
+                        oddEven.push(firstRange);
+                    }
+                }
+            }
+            if(choice == 'odd'){
+                for(firstRange; firstRange<=endRange; firstRange++){
+                    if(firstRange % 2 !== 0){
+                        oddEven.push(firstRange);
+                    }
+                }
+            }
+            document.getElementById('oddEven').innerHTML = oddEven;
+        }
+    </script>
+</body>
+
+</html>
